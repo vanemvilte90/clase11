@@ -1,16 +1,16 @@
 server:
   port: 8080
-
+  
 spring:
   cloud:
     gateway:
       routes:
-        - id: musicRoute
+        - id:
           uri: http://localhost:8082/
           predicates:
             - Path=/musics/**
         - id: playlistRoute
-          uri: http://localhost:8084
+          uri: http://localhost:8084/
           predicates:
             - Path=/playlists/**
 eureka:
