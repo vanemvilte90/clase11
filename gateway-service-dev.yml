@@ -1,0 +1,19 @@
+server:
+  port: 8080
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: musicRoute
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/musics/**
+        - id: playlistRoute
+          uri: http://localhost:8084
+          predicates:
+            - Path=/playlists/**
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
